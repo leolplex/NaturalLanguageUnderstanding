@@ -1,0 +1,54 @@
+curl -X POST -u "apikey:{APIKEY}" \
+"{URL}/v1/analyze?version=2019-07-12" \
+--header "Content-Type: application/json" \
+--data '{
+  "url": "https://www.unotv.com/noticias/portal/tecnologia/detalle/conoce-a-cimon-primer-astronauta-hecho-de-inteligencia-artificial-394114/",
+  "features": {
+    "sentiment": {},
+    "categories": {},
+    "concepts": {},
+    "entities": {},
+    "keywords": {}
+  }
+}'
+
+Ejemplo con texto
+
+curl -X POST -u "apikey:{KEY}" \
+"{URL}/v1/analyze?version=2019-07-12" \
+--request POST \
+--header "Content-Type: application/json" \
+--data '{
+  "text": "¡Esta en una super ubicacion! El servicio pesimo, gente grosera",
+  "features": {
+    "sentiment": {
+      "targets": [
+        "ubicacion",
+        "servicio"
+      ]
+    },
+    "keywords": {
+      "emotion": true
+    }
+  }
+}'
+
+
+curl -X POST -u "apikey:{KEY}" \
+--header "Content-Type: application/json" \
+--data '{
+  "text": "Esta en una super ubicacion El servicio pesimo, gente grosera",
+  "features": {
+    "sentiment": {
+      "targets": [
+        "apples",
+        "oranges",
+        "broccoli"
+      ]
+    },
+    "keywords": {
+      "emotion": true
+    }
+  }
+}' \
+"{URL}/v1/analyze?version=2019-07-12"
