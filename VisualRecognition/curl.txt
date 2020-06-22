@@ -1,0 +1,2 @@
+curl -X POST -u "apikey:H6ldYs3kPN_W00vvOr261xTPHBkQEtuHbuGmQvAV_b9f" -F "images_file=@taco-1018962_1280.jpg" \
+-F "classifier_ids=food" "https://gateway.watsonplatform.net/visual-recognition/api/v3/classify?version=2018-03-19"
